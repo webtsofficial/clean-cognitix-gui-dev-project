@@ -55,4 +55,21 @@ describe('AlbumsService', () => {
         expect(req.request.method).toBe('GET');
         req.flush(dummyAlbums);
     }));
+
+    it('getAlbum(id) : Observable Album', inject([AlbumsService], () => {
+        const dummyAlbum: Album = {
+                'userId': 1,
+                'id': 1,
+                'title': 'quidem molestiae enim'
+            },
+              dummyId = 1;
+
+        service.getAlbum(dummyId).subscribe(album => {
+            expect(album).toEqual(dummyAlbum);
+        });
+
+        const req = httpMock.expectOne(APIURL + '/albums/' + dummyId);
+        expect(req.request.method).toBe('GET');
+        req.flush(dummyAlbum);
+    }));
 });

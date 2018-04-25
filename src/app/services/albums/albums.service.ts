@@ -17,4 +17,11 @@ export class AlbumsService {
     );
   }
 
+  getAlbum(id: number): Observable<Album> {
+    const url = APIURL + '/albums/' + id;
+    return this.http.get<Album>(url).map(
+        album => album as Album
+    );
+  }
+
 }
