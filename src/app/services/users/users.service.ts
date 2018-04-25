@@ -26,7 +26,9 @@ export class UsersService {
 
 
     filterUsersById(id: number, users: User[]): User {
-        return users.filter(user => user.id === id)[0];
+        return users.filter(
+            user => user.id === id
+        )[0];
     }
 
 }
