@@ -8,6 +8,8 @@ import {LazyLoadImageModule} from 'ng-lazyload-image';
 // Components
 import {AppComponent} from './app.component';
 import { UserOverviewComponent } from './components/sites/user-overview/user-overview.component';
+import {UsersService} from './services/users/users.service';
+import {AlbumsService} from './services/albums/albums.service';
 // Services
 
 // Pipes
@@ -29,7 +31,10 @@ export const APIURL = 'https://jsonplaceholder.typicode.com';
         HttpClientModule,
         LazyLoadImageModule
     ],
-    providers: [],
+    providers: [
+        UsersService,
+        AlbumsService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
