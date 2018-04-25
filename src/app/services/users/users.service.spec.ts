@@ -96,29 +96,29 @@ describe('UsersService', () => {
 
     it('getUser(id) : Observable User', inject([UsersService], () => {
         const dummyUser: User = {
-            'id': 1,
-            'name': 'Leanne Graham',
-            'username': 'Bret',
-            'email': 'Sincere@april.biz',
-            'address': {
-                'street': 'Kulas Light',
-                'suite': 'Apt. 556',
-                'city': 'Gwenborough',
-                'zipcode': '92998-3874',
-                'geo': {
-                    'lat': '-37.3159',
-                    'lng': '81.1496'
+                'id': 1,
+                'name': 'Leanne Graham',
+                'username': 'Bret',
+                'email': 'Sincere@april.biz',
+                'address': {
+                    'street': 'Kulas Light',
+                    'suite': 'Apt. 556',
+                    'city': 'Gwenborough',
+                    'zipcode': '92998-3874',
+                    'geo': {
+                        'lat': '-37.3159',
+                        'lng': '81.1496'
+                    }
+                },
+                'phone': '1-770-736-8031 x56442',
+                'website': 'hildegard.org',
+                'company': {
+                    'name': 'Romaguera-Crona',
+                    'catchPhrase': 'Multi-layered client-server neural-net',
+                    'bs': 'harness real-time e-markets'
                 }
             },
-            'phone': '1-770-736-8031 x56442',
-            'website': 'hildegard.org',
-            'company': {
-                'name': 'Romaguera-Crona',
-                'catchPhrase': 'Multi-layered client-server neural-net',
-                'bs': 'harness real-time e-markets'
-            }
-        },
-              dummyId = 1;
+            dummyId = 1;
 
         service.getUser(dummyId).subscribe(user => {
             expect(user).toEqual(dummyUser);
@@ -127,5 +127,37 @@ describe('UsersService', () => {
         const req = httpMock.expectOne(APIURL + '/users/' + dummyId);
         expect(req.request.method).toBe('GET');
         req.flush(dummyUser);
+    }));
+
+    it('filterUsersById(id, users) : User', inject([UsersService], () => {
+        const dummyId = 1,
+              dummyUsers = [
+                {
+                    'id': 1,
+                    'name': 'Leanne Graham',
+                    'username': 'Bret',
+                    'email': 'Sincere@april.biz',
+                    'address': {
+                        'street': 'Kulas Light',
+                        'suite': 'Apt. 556',
+                        'city': 'Gwenborough',
+                        'zipcode': '92998-3874',
+                        'geo': {
+                            'lat': '-37.3159',
+                            'lng': '81.1496'
+                        }
+                    },
+                    'phone': '1-770-736-8031 x56442',
+                    'website': 'hildegard.org',
+                    'company': {
+                        'name': 'Romaguera-Crona',
+                        'catchPhrase': 'Multi-layered client-server neural-net',
+                        'bs': 'harness real-time e-markets'
+                    }
+                }
+            ],
+              filteredUsers = service.filterUsersById(dummyId, dummyUsers);
+
+        expect(filteredUsers).toEqual(dummyUsers[0]);
     }));
 });
