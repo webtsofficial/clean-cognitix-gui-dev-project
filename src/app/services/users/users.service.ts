@@ -19,7 +19,9 @@ export class UsersService {
 
     getUser(id: number) {
         const url = APIURL + '/users/' + id;
-        return this.http.get<User>(url);
+        return this.http.get<User>(url).map(
+            user => user as User
+        );
     }
 
 }
