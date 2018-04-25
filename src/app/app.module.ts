@@ -7,13 +7,17 @@ import {HttpClientModule} from '@angular/common/http';
 import {LazyLoadImageModule} from 'ng-lazyload-image';
 // Components
 import {AppComponent} from './app.component';
+import { UserOverviewComponent } from './components/sites/user-overview/user-overview.component';
 // Services
 
 // Pipes
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        // Sites
+        UserOverviewComponent
+        // General
     ],
     imports: [
         BrowserModule,
