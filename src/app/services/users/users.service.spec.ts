@@ -1,10 +1,14 @@
-import {TestBed, inject, getTestBed} from '@angular/core/testing';
+import {
+    TestBed,
+    inject,
+    getTestBed
+} from '@angular/core/testing';
 import {UsersService} from './users.service';
 import {
     HttpClientTestingModule,
     HttpTestingController
 } from '@angular/common/http/testing';
-import { User } from '../../models/User';
+import {User} from '../../models/User';
 import {APIURL} from '../../app.module';
 
 describe('UsersService', () => {
@@ -30,7 +34,7 @@ describe('UsersService', () => {
         expect(service).toBeTruthy();
     }));
 
-    it('getUser() from HttpMock and return Observable User[]', inject([UsersService], () => {
+    it('getUsers() : Observable User[]', inject([UsersService], () => {
         const dummyUsers: User[] = [
             {
                 'id': 1,
@@ -88,5 +92,40 @@ describe('UsersService', () => {
         const req = httpMock.expectOne(APIURL + '/users/');
         expect(req.request.method).toBe('GET');
         req.flush(dummyUsers);
+    }));
+
+    it('getUser(id) : Observable User', inject([UsersService], () => {
+        const dummyUser: User = {
+            'id': 1,
+            'name': 'Leanne Graham',
+            'username': 'Bret',
+            'email': 'Sincere@april.biz',
+            'address': {
+                'street': 'Kulas Light',
+                'suite': 'Apt. 556',
+                'city': 'Gwenborough',
+                'zipcode': '92998-3874',
+                'geo': {
+                    'lat': '-37.3159',
+                    'lng': '81.1496'
+                }
+            },
+            'phone': '1-770-736-8031 x56442',
+            'website': 'hildegard.org',
+            'company': {
+                'name': 'Romaguera-Crona',
+                'catchPhrase': 'Multi-layered client-server neural-net',
+                'bs': 'harness real-time e-markets'
+            }
+        },
+              dummyId = 1;
+
+        service.getUser(dummyId).subscribe(user => {
+            expect(user).toEqual(dummyUser);
+        });
+
+        const req = httpMock.expectOne(APIURL + '/users/' + dummyId);
+        expect(req.request.method).toBe('GET');
+        req.flush(dummyUser);
     }));
 });
