@@ -12,6 +12,9 @@ import { UserOverviewComponent } from './components/sites/user-overview/user-ove
 
 // Pipes
 
+// Global Const
+export const APIURL = 'https://jsonplaceholder.typicode.com';
+
 @NgModule({
     declarations: [
         AppComponent,
