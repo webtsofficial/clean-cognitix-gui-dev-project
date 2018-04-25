@@ -1,4 +1,4 @@
-class GeoLocation {
+export class GeoLocation {
     lat: string;
     lng: string;
 }
