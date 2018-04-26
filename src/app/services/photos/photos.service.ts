@@ -24,4 +24,8 @@ export class PhotosService {
     );
   }
 
+  filterPhotosByAlbumId(albumId: number, photos: Photo[]): Photo[] {
+    return photos.filter(photo => photo.albumId === albumId);
+  }
+
 }
