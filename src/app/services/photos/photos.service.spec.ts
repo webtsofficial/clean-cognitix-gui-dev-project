@@ -36,7 +36,7 @@ describe('PhotosService', () => {
         expect(service).toBeTruthy();
     }));
 
-    it('getAlbums() : Observable Album[]', inject([PhotosService], () => {
+    it('getPhotos() : Observable Photo[]', inject([PhotosService], () => {
         const dummyPhotos: Photo[] = [
             {
             'albumId': 1,
@@ -76,5 +76,24 @@ describe('PhotosService', () => {
         const req = httpMock.expectOne(APIURL + '/photos/');
         expect(req.request.method).toBe('GET');
         req.flush(dummyPhotos);
+    }));
+
+    it('getPhoto(id) : Observable Photo', inject([PhotosService], () => {
+        const dummyPhoto: Photo = {
+                'albumId': 1,
+                'id': 1,
+                'title': 'accusamus beatae ad facilis cum similique qui sunt',
+                'url': 'http://placehold.it/600/92c952',
+                'thumbnailUrl': 'http://placehold.it/150/92c952'
+            },
+            dummyId = 1;
+
+        service.getPhoto(dummyId).subscribe(photo => {
+            expect(photo).toEqual(dummyPhoto);
+        });
+
+        const req = httpMock.expectOne(APIURL + '/photos/' + dummyId);
+        expect(req.request.method).toBe('GET');
+        req.flush(dummyPhoto);
     }));
 });

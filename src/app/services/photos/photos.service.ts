@@ -17,4 +17,11 @@ export class PhotosService {
     );
   }
 
+  getPhoto(id: number): Observable<Photo> {
+    const url = APIURL + '/photos/' + id;
+    return this.http.get<Photo>(url).map(
+        photo => photo as Photo
+    );
+  }
+
 }
