@@ -13,6 +13,7 @@ import { UserOverviewComponent } from './components/sites/user-overview/user-ove
 import {UsersService} from './services/users/users.service';
 import {AlbumsService} from './services/albums/albums.service';
 import {PhotosService} from './services/photos/photos.service';
+import { UserCardComponent } from './components/general/user/user-card/user-card.component';
 
 // Pipes
 
@@ -23,7 +24,8 @@ export const APIURL = 'https://jsonplaceholder.typicode.com';
     declarations: [
         AppComponent,
         // Sites
-        UserOverviewComponent
+        UserOverviewComponent,
+        UserCardComponent
         // General
     ],
     imports: [

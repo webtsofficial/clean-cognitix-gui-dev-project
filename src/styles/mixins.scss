@@ -1,0 +1,148 @@
+// Media Queries
+@mixin mobile() {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}
+@mixin tablet() {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin desktop() {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+@mixin desktopHD() {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+// CSS 3 Vendor Prefixing --------------------------------------------------------------------------------------------------------------
+
+// Transition
+@mixin transition($transitions...) {
+  @each $transition in $transitions {
+    -webkit-transition: #{$transition};
+    -moz-transition: #{$transition};
+    -ms-transition: #{$transition};
+    -o-transition: #{$transition};
+    transition: #{$transition};
+  }
+}
+
+;
+
+// Translate
+@mixin translate($x: 0, $y: 0) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+// Rotate
+@mixin rotate($direction, $deg: 0) {
+  @if $direction == 'x' {
+    -webkit-transform: rotateX($deg);
+    -moz-transform: rotateX($deg);
+    -ms-transform: rotateX($deg);
+    -o-transform: rotateX($deg);
+    transform: rotateX($deg);
+  } @else if $direction == 'y' {
+    -webkit-transform: rotateY($deg);
+    -moz-transform: rotateY($deg);
+    -ms-transform: rotateY($deg);
+    -o-transform: rotateY($deg);
+    transform: rotateY($deg);
+  } @else if $direction == 'z' {
+    -webkit-transform: rotateZ($deg);
+    -moz-transform: rotateZ($deg);
+    -ms-transform: rotateZ($deg);
+    -o-transform: rotateZ($deg);
+    transform: rotateZ($deg);
+  }
+}
+
+// Scale
+@mixin scale($direction, $amount: 0) {
+  @if $direction == 'x' {
+    -webkit-transform: scaleX($amount);
+    -moz-transform: scaleX($amount);
+    -ms-transform: scaleX($amount);
+    -o-transform: scaleX($amount);
+    transform: scaleX($amount);
+  } @else if $direction == 'y' {
+    -webkit-transform: scaleY($amount);
+    -moz-transform: scaleY($amount);
+    -ms-transform: scaleY($amount);
+    -o-transform: scaleY($amount);
+    transform: scaleY($amount);
+  } @else if $direction == 'z' {
+    -webkit-transform: scaleZ($amount);
+    -moz-transform: scaleZ($amount);
+    -ms-transform: scaleZ($amount);
+    -o-transform: scaleZ($amount);
+    transform: scaleZ($amount);
+  } @else if $direction == 'xy' {
+    -webkit-transform: scale($amount);
+    -moz-transform: scale($amount);
+    -ms-transform: scale($amount);
+    -o-transform: scale($amount);
+    transform: scale($amount);
+  }
+}
+
+// Box-Shadow - for predefined Lists
+@mixin box-shadow($parameters...) {
+  @each $var in $parameters {
+    -webkit-box-shadow: #{$var};
+    -moz-box-shadow: #{$var};
+    -ms-box-shadow: #{$var};
+    -o-box-shadow: #{$var};
+    box-shadow: #{$var};
+  }
+}
+
+// Border-Radius - for 1-4 radius without comma
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Gradients
+@mixin gradient($type: 'linear', $parameters...) {
+  @each $var in $parameters {
+    @if $type == 'linear' {
+      background: -webkit-linear-gradient(#{$var});
+      background: -moz-linear-gradient(#{$var});
+      background: -ms-linear-gradient(#{$var});
+      background: -o-linear-gradient(#{$var});
+      background: linear-gradient(#{$var});
+    } @else if $type == 'radial' {
+      background: -webkit-radial-gradient(#{$var});
+      background: -moz-radial-gradient(#{$var});
+      background: -ms-radial-gradient(#{$var});
+      background: -o-radial-gradient(#{$var});
+      background: radial-gradient(#{$var});
+    } @else if $type == 'repeating-linear' {
+      background: -webkit-repeating-linear-gradient(#{$var});
+      background: -moz-repeating-linear-gradient(#{$var});
+      background: -ms-repeating-linear-gradient(#{$var});
+      background: -o-repeating-linear-gradient(#{$var});
+      background: repeating-linear-gradient(#{$var});
+    } @else if $type == 'repeating-radial' {
+      background: -webkit-repeating-radial-gradient(#{$var});
+      background: -moz-repeating-radial-gradient(#{$var});
+      background: -ms-repeating-radial-gradient(#{$var});
+      background: -o-repeating-radial-gradient(#{$var});
+      background: repeating-radial-gradient(#{$var});
+    }
+  }
+}
