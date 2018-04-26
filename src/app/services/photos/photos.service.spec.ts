@@ -78,7 +78,7 @@ describe('PhotosService', () => {
         req.flush(dummyPhotos);
     }));
 
-    it('getPhoto(id) : Observable Photo', inject([PhotosService], () => {
+    it('getPhoto(id: number) : Observable Photo', inject([PhotosService], () => {
         const dummyPhoto: Photo = {
                 'albumId': 1,
                 'id': 1,
@@ -97,7 +97,7 @@ describe('PhotosService', () => {
         req.flush(dummyPhoto);
     }));
 
-    it('filterPhotosByAlbumId(albumId, photos) : Photo[]', inject([PhotosService], () => {
+    it('filterPhotosByAlbumId(albumId: number, photos: Photo[]) : Photo[]', inject([PhotosService], () => {
         const dummyPhotos = [
                 {
                     'albumId': 1,
@@ -144,6 +144,87 @@ describe('PhotosService', () => {
                     'title': 'et inventore quae ut tempore eius voluptatum',
                     'url': 'http://placehold.it/600/9e59da',
                     'thumbnailUrl': 'http://placehold.it/150/9e59da'
+                }
+            ];
+
+        expect(filteredPhotos).toEqual(expectedResult);
+    }));
+
+    it('filterPhotosByAlbumIds(albumIds: number[], photos: Photo[]) : Photo[]', inject([PhotosService], () => {
+        const dummyPhotos = [
+                {
+                    'albumId': 1,
+                    'id': 49,
+                    'title': 'quasi quae est modi quis quam in impedit',
+                    'url': 'http://placehold.it/600/2cd88b',
+                    'thumbnailUrl': 'http://placehold.it/150/2cd88b'
+                },
+                {
+                    'albumId': 1,
+                    'id': 50,
+                    'title': 'et inventore quae ut tempore eius voluptatum',
+                    'url': 'http://placehold.it/600/9e59da',
+                    'thumbnailUrl': 'http://placehold.it/150/9e59da'
+                },
+                {
+                    'albumId': 2,
+                    'id': 51,
+                    'title': 'non sunt voluptatem placeat consequuntur rem incidunt',
+                    'url': 'http://placehold.it/600/8e973b',
+                    'thumbnailUrl': 'http://placehold.it/150/8e973b'
+                },
+                {
+                    'albumId': 2,
+                    'id': 52,
+                    'title': 'eveniet pariatur quia nobis reiciendis laboriosam ea',
+                    'url': 'http://placehold.it/600/121fa4',
+                    'thumbnailUrl': 'http://placehold.it/150/121fa4'
+                },
+                {
+                    'albumId': 3,
+                    'id': 107,
+                    'title': 'maiores ipsa ut autem',
+                    'url': 'http://placehold.it/600/50d332',
+                    'thumbnailUrl': 'http://placehold.it/150/50d332'
+                },
+                {
+                    'albumId': 3,
+                    'id': 108,
+                    'title': 'qui tempora vel exercitationem harum iusto voluptas incidunt',
+                    'url': 'http://placehold.it/600/627495',
+                    'thumbnailUrl': 'http://placehold.it/150/627495'
+                }
+            ],
+            dummyAlbumIds = [1, 2],
+            filteredPhotos = service.filterPhotosByAlbumIds(dummyAlbumIds, dummyPhotos),
+            expectedResult = [
+                {
+                    'albumId': 1,
+                    'id': 49,
+                    'title': 'quasi quae est modi quis quam in impedit',
+                    'url': 'http://placehold.it/600/2cd88b',
+                    'thumbnailUrl': 'http://placehold.it/150/2cd88b'
+                },
+                {
+                    'albumId': 1,
+                    'id': 50,
+                    'title': 'et inventore quae ut tempore eius voluptatum',
+                    'url': 'http://placehold.it/600/9e59da',
+                    'thumbnailUrl': 'http://placehold.it/150/9e59da'
+                },
+                {
+                    'albumId': 2,
+                    'id': 51,
+                    'title': 'non sunt voluptatem placeat consequuntur rem incidunt',
+                    'url': 'http://placehold.it/600/8e973b',
+                    'thumbnailUrl': 'http://placehold.it/150/8e973b'
+                },
+                {
+                    'albumId': 2,
+                    'id': 52,
+                    'title': 'eveniet pariatur quia nobis reiciendis laboriosam ea',
+                    'url': 'http://placehold.it/600/121fa4',
+                    'thumbnailUrl': 'http://placehold.it/150/121fa4'
                 }
             ];
 
