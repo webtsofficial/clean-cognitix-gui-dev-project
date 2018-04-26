@@ -28,6 +28,10 @@ describe('AlbumsService', () => {
         httpMock = injector.get(HttpTestingController);
     });
 
+    afterEach(() => {
+        httpMock.verify();
+    });
+
     it('should be created', inject([AlbumsService], () => {
         expect(service).toBeTruthy();
     }));
