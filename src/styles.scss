@@ -42,6 +42,16 @@ h6 {
   font-size: 1.6rem;
 }
 
+a {
+  color: $color-orange;
+  @include transition(color 0.3s ease-in-out);
+
+  &:hover {
+    text-decoration: none;
+    color: darken($color-orange, 20%);
+  }
+}
+
 @include mobile {
   html, body {
     font-size: 11.5px;

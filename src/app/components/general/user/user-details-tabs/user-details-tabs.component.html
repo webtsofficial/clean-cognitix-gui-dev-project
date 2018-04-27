@@ -1,8 +1,42 @@
 <section class="user-details-tabs">
-  <div class="tabs-bar">
-
+  <div class="tabs-bar clearfix">
+    <div [ngClass]="{'active': activeTab === 'email'}" (click)="setActiveTab('email')">
+      <i class="fas fa-envelope"></i>
+    </div>
+    <div [ngClass]="{'active': activeTab === 'phone'}" (click)="setActiveTab('phone')">
+      <i class="fas fa-phone"></i>
+    </div>
+    <div [ngClass]="{'active': activeTab === 'website'}" (click)="setActiveTab('website')">
+      <i class="fas fa-globe"></i>
+    </div>
+    <div [ngClass]="{'active': activeTab === 'address'}" (click)="setActiveTab('address')">
+      <i class="fas fa-home"></i>
+    </div>
+    <div [ngClass]="{'active': activeTab === 'company'}" (click)="setActiveTab('company')">
+      <i class="fas fa-building"></i>
+    </div>
   </div>
   <div class="tabs-contents">
-
+    <div *ngIf="activeTab === 'email'">
+      <a [href]="'mailto: ' + user.email">
+        <i class="far fa-envelope"></i> {{user.email}}
+      </a>
+    </div>
+    <div *ngIf="activeTab === 'phone'">
+      <a [href]="'tel:' + user.phone">
+        <i class="fas fa-phone"></i> {{user.phone}}
+      </a>
+    </div>
+    <div *ngIf="activeTab === 'website'">
+      <a [href]="user.website">
+        <i class="fas fa-globe"></i> {{user.website}}
+      </a>
+    </div>
+    <div *ngIf="activeTab === 'address'">
+      {{ user.address}}
+    </div>
+    <div *ngIf="activeTab === 'company'">
+      {{user.company}}
+    </div>
   </div>
 </section>

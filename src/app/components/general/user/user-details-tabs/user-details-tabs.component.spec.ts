@@ -252,6 +252,7 @@ describe('UserDetailsTabsComponent', () => {
         }
     ];
     component.user = userData[0];
+    component.activeTab = 'email';
 
     fixture.detectChanges();
   });
@@ -259,4 +260,11 @@ describe('UserDetailsTabsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+    it('setActiveTab(activeTabName: string) - change this.activeTab: string', () => {
+        const startTab = component.activeTab;
+        component.setActiveTab('phone');
+        const setTab = component.activeTab;
+        expect(setTab).toBe('phone');
+    });
 });

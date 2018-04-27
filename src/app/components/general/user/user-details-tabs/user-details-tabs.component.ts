@@ -11,10 +11,17 @@ import {
 })
 export class UserDetailsTabsComponent implements OnInit {
   @Input() user;
+  activeTab: string;
 
-  constructor() { }
+  constructor() {
+    this.activeTab = 'email';
+  }
 
   ngOnInit() {
+  }
+
+  setActiveTab(aciveTabName: string): void {
+    this.activeTab = aciveTabName;
   }
 
 }
