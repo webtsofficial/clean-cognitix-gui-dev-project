@@ -1,0 +1,11 @@
+<form>
+    <div class="form-group searchField">
+        <input type="text"
+               class="form-control"
+               name="searchTerm"
+               [(ngModel)]="searchTermModel"
+               (ngModelChange)="changeSearchTerm($event)"
+               aria-describedby="nameHelp"
+               placeholder="Enter Name of User">
+    </div>
+</form>

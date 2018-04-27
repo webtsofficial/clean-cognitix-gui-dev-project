@@ -13,6 +13,9 @@ import {UserAddressTableComponent} from '../../general/user/user-address-table/u
 import {GeoLocationComponent} from '../../general/map/geo-location/geo-location.component';
 import {AgmCoreModule} from '@agm/core';
 import {UserCompanyComponent} from '../../general/user/user-company/user-company.component';
+import {SearchInputComponent} from '../../general/form/search-input/search-input.component';
+import {FilterUserByNamePipe} from '../../../pipes/user/filter-user-by-name/filter-user-by-name.pipe';
+import {FormsModule} from '@angular/forms';
 
 describe('UserOverviewComponent', () => {
     let component: UserOverviewComponent;
@@ -24,7 +27,8 @@ describe('UserOverviewComponent', () => {
                 HttpClientTestingModule,
                 AgmCoreModule.forRoot({
                     apiKey: 'AIzaSyD7C7TiBDUEczB86xK7XxBbACDTzVxXhLs'
-                })
+                }),
+                FormsModule
             ],
             declarations: [
                 UserOverviewComponent,
@@ -32,7 +36,9 @@ describe('UserOverviewComponent', () => {
                 UserDetailsTabsComponent,
                 UserAddressTableComponent,
                 GeoLocationComponent,
-                UserCompanyComponent
+                UserCompanyComponent,
+                SearchInputComponent,
+                FilterUserByNamePipe
             ],
             providers: [UsersService]
         })
@@ -47,5 +53,10 @@ describe('UserOverviewComponent', () => {
 
     it('should create', () => {
         expect(component).toBeTruthy();
+    });
+    it('changeSearchName(string) to filter user', () => {
+        let searchTerm = 'search after this term';
+        component.changeSearchName(searchTerm);
+        expect(component.userSearchName).toBe(searchTerm);
     });
 });

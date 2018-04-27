@@ -7,7 +7,12 @@ import {User} from '../../../models/User';
 export class FilterUserByNamePipe implements PipeTransform {
 
   transform(users: User[], username?: string): User[] {
-    return users.filter(user => user.name === username);
+      if (!users) { return []; }
+      if (!username) { return users; }
+      username = username.toLowerCase();
+      return users.filter(user => {
+          return user.name.toLowerCase().includes(username);
+      });
   }
 
 }

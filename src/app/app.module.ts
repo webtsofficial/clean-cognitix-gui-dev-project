@@ -20,10 +20,10 @@ import { UserAddressTableComponent } from './components/general/user/user-addres
 import { GeoLocationComponent } from './components/general/map/geo-location/geo-location.component';
 import {CommonModule} from '@angular/common';
 import { UserCompanyComponent } from './components/general/user/user-company/user-company.component';
-import { FilterUserByNamePipe } from './pipes/user/filter-user-by-name/filter-user-by-name.pipe';
+import { SearchInputComponent } from './components/general/form/search-input/search-input.component';
 
 // Pipes
-
+import { FilterUserByNamePipe } from './pipes/user/filter-user-by-name/filter-user-by-name.pipe';
 // Global Const
 export const APIURL = 'https://jsonplaceholder.typicode.com';
 
@@ -37,6 +37,7 @@ export const APIURL = 'https://jsonplaceholder.typicode.com';
         UserAddressTableComponent,
         GeoLocationComponent,
         UserCompanyComponent,
+        SearchInputComponent,
         // Pipes
         FilterUserByNamePipe
         // General
