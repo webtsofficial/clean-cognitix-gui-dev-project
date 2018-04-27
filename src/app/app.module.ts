@@ -15,6 +15,7 @@ import {AlbumsService} from './services/albums/albums.service';
 import {PhotosService} from './services/photos/photos.service';
 import { UserCardComponent } from './components/general/user/user-card/user-card.component';
 import { UserDetailsTabsComponent } from './components/general/user/user-details-tabs/user-details-tabs.component';
+import { UserAddressTableComponent } from './components/general/user/user-address-table/user-address-table.component';
 
 // Pipes
 
@@ -27,7 +28,8 @@ export const APIURL = 'https://jsonplaceholder.typicode.com';
         // Sites
         UserOverviewComponent,
         UserCardComponent,
-        UserDetailsTabsComponent
+        UserDetailsTabsComponent,
+        UserAddressTableComponent
         // General
     ],
     imports: [

@@ -9,6 +9,7 @@ import {UsersService} from '../../../services/users/users.service';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {UserCardComponent} from '../../general/user/user-card/user-card.component';
 import {UserDetailsTabsComponent} from '../../general/user/user-details-tabs/user-details-tabs.component';
+import {UserAddressTableComponent} from '../../general/user/user-address-table/user-address-table.component';
 
 describe('UserOverviewComponent', () => {
     let component: UserOverviewComponent;
@@ -17,7 +18,7 @@ describe('UserOverviewComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
-            declarations: [UserOverviewComponent, UserCardComponent, UserDetailsTabsComponent],
+            declarations: [UserOverviewComponent, UserCardComponent, UserDetailsTabsComponent, UserAddressTableComponent],
             providers: [UsersService]
         })
             .compileComponents();

@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserDetailsTabsComponent } from './user-details-tabs.component';
 import {User} from '../../../../models/User';
+import {UserAddressTableComponent} from '../user-address-table/user-address-table.component';
 
 describe('UserDetailsTabsComponent', () => {
   let component: UserDetailsTabsComponent;
@@ -10,7 +11,7 @@ describe('UserDetailsTabsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserDetailsTabsComponent ]
+      declarations: [ UserDetailsTabsComponent, UserAddressTableComponent ]
     })
     .compileComponents();
   }));

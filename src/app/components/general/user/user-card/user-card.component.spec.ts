@@ -7,6 +7,7 @@ import {
 import {UserCardComponent} from './user-card.component';
 import {User} from '../../../../models/User';
 import {UserDetailsTabsComponent} from '../user-details-tabs/user-details-tabs.component';
+import {UserAddressTableComponent} from '../user-address-table/user-address-table.component';
 
 describe('UserCardComponent', () => {
     let component: UserCardComponent;
@@ -15,7 +16,7 @@ describe('UserCardComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [UserCardComponent, UserDetailsTabsComponent]
+            declarations: [UserCardComponent, UserDetailsTabsComponent, UserAddressTableComponent]
         })
             .compileComponents();
 
