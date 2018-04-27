@@ -13,6 +13,7 @@ import {AgmCoreModule} from '@agm/core';
 import {UserCompanyComponent} from '../user-company/user-company.component';
 import {AlbumButtonComponent} from '../../buttons/album-button/album-button.component';
 import {RouterTestingModule} from '@angular/router/testing';
+import {PhotosButtonComponent} from '../../buttons/photos-button/photos-button.component';
 
 describe('UserCardComponent', () => {
     let component: UserCardComponent;
@@ -33,7 +34,8 @@ describe('UserCardComponent', () => {
                 UserAddressTableComponent,
                 GeoLocationComponent,
                 UserCompanyComponent,
-                AlbumButtonComponent
+                AlbumButtonComponent,
+                PhotosButtonComponent
             ]
         })
             .compileComponents();

@@ -18,6 +18,7 @@ import {FilterUserByNamePipe} from '../../../pipes/user/filter-user-by-name/filt
 import {FormsModule} from '@angular/forms';
 import {AlbumButtonComponent} from '../../general/buttons/album-button/album-button.component';
 import {RouterTestingModule} from '@angular/router/testing';
+import {PhotosButtonComponent} from '../../general/buttons/photos-button/photos-button.component';
 
 describe('UserOverviewComponent', () => {
     let component: UserOverviewComponent;
@@ -42,6 +43,7 @@ describe('UserOverviewComponent', () => {
                 UserCompanyComponent,
                 SearchInputComponent,
                 AlbumButtonComponent,
+                PhotosButtonComponent,
                 FilterUserByNamePipe
             ],
             providers: [UsersService]
