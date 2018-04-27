@@ -9,8 +9,6 @@
         </div>
     </div>
     <div class="user-content" [ngClass]="{'active' : userActive}">
-        <span *ngIf="userActive">
-            ABC
-        </span>
+        <app-user-details-tabs *ngIf="userActive" [user]="user"></app-user-details-tabs>
     </div>
 </section>
