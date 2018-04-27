@@ -8,6 +8,8 @@ import {UserCardComponent} from './user-card.component';
 import {User} from '../../../../models/User';
 import {UserDetailsTabsComponent} from '../user-details-tabs/user-details-tabs.component';
 import {UserAddressTableComponent} from '../user-address-table/user-address-table.component';
+import {GeoLocationComponent} from '../../map/geo-location/geo-location.component';
+import {AgmCoreModule} from '@agm/core';
 
 describe('UserCardComponent', () => {
     let component: UserCardComponent;
@@ -16,7 +18,17 @@ describe('UserCardComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [UserCardComponent, UserDetailsTabsComponent, UserAddressTableComponent]
+            imports: [
+                AgmCoreModule.forRoot({
+                    apiKey: 'AIzaSyD7C7TiBDUEczB86xK7XxBbACDTzVxXhLs'
+                })
+            ],
+            declarations: [
+                UserCardComponent,
+                UserDetailsTabsComponent,
+                UserAddressTableComponent,
+                GeoLocationComponent
+            ]
         })
             .compileComponents();
 

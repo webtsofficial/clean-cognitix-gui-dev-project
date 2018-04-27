@@ -3,6 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserDetailsTabsComponent } from './user-details-tabs.component';
 import {User} from '../../../../models/User';
 import {UserAddressTableComponent} from '../user-address-table/user-address-table.component';
+import {AgmCoreModule} from '@agm/core';
+import {GeoLocationComponent} from '../../map/geo-location/geo-location.component';
 
 describe('UserDetailsTabsComponent', () => {
   let component: UserDetailsTabsComponent;
@@ -11,7 +13,16 @@ describe('UserDetailsTabsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserDetailsTabsComponent, UserAddressTableComponent ]
+        imports: [
+            AgmCoreModule.forRoot({
+                apiKey: 'AIzaSyD7C7TiBDUEczB86xK7XxBbACDTzVxXhLs'
+            })
+        ],
+      declarations: [
+          UserDetailsTabsComponent,
+          UserAddressTableComponent,
+          GeoLocationComponent
+      ]
     })
     .compileComponents();
   }));

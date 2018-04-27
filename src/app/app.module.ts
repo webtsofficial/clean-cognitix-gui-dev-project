@@ -5,6 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {LazyLoadImageModule} from 'ng-lazyload-image';
+import {AgmCoreModule} from '@agm/core';
 // Components
 import {AppComponent} from './app.component';
 import { UserOverviewComponent } from './components/sites/user-overview/user-overview.component';
@@ -16,6 +17,8 @@ import {PhotosService} from './services/photos/photos.service';
 import { UserCardComponent } from './components/general/user/user-card/user-card.component';
 import { UserDetailsTabsComponent } from './components/general/user/user-details-tabs/user-details-tabs.component';
 import { UserAddressTableComponent } from './components/general/user/user-address-table/user-address-table.component';
+import { GeoLocationComponent } from './components/general/map/geo-location/geo-location.component';
+import {CommonModule} from '@angular/common';
 
 // Pipes
 
@@ -29,15 +32,20 @@ export const APIURL = 'https://jsonplaceholder.typicode.com';
         UserOverviewComponent,
         UserCardComponent,
         UserDetailsTabsComponent,
-        UserAddressTableComponent
+        UserAddressTableComponent,
+        GeoLocationComponent
         // General
     ],
     imports: [
         BrowserModule,
+        CommonModule,
         FormsModule,
         AppRoutingModule,
         HttpClientModule,
-        LazyLoadImageModule
+        LazyLoadImageModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyD7C7TiBDUEczB86xK7XxBbACDTzVxXhLs'
+        })
     ],
     providers: [
         UsersService,
