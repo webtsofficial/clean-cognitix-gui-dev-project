@@ -12,6 +12,7 @@ import {UserDetailsTabsComponent} from '../../general/user/user-details-tabs/use
 import {UserAddressTableComponent} from '../../general/user/user-address-table/user-address-table.component';
 import {GeoLocationComponent} from '../../general/map/geo-location/geo-location.component';
 import {AgmCoreModule} from '@agm/core';
+import {UserCompanyComponent} from '../../general/user/user-company/user-company.component';
 
 describe('UserOverviewComponent', () => {
     let component: UserOverviewComponent;
@@ -30,7 +31,8 @@ describe('UserOverviewComponent', () => {
                 UserCardComponent,
                 UserDetailsTabsComponent,
                 UserAddressTableComponent,
-                GeoLocationComponent
+                GeoLocationComponent,
+                UserCompanyComponent
             ],
             providers: [UsersService]
         })

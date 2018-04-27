@@ -19,6 +19,7 @@ import { UserDetailsTabsComponent } from './components/general/user/user-details
 import { UserAddressTableComponent } from './components/general/user/user-address-table/user-address-table.component';
 import { GeoLocationComponent } from './components/general/map/geo-location/geo-location.component';
 import {CommonModule} from '@angular/common';
+import { UserCompanyComponent } from './components/general/user/user-company/user-company.component';
 
 // Pipes
 
@@ -33,7 +34,8 @@ export const APIURL = 'https://jsonplaceholder.typicode.com';
         UserCardComponent,
         UserDetailsTabsComponent,
         UserAddressTableComponent,
-        GeoLocationComponent
+        GeoLocationComponent,
+        UserCompanyComponent
         // General
     ],
     imports: [

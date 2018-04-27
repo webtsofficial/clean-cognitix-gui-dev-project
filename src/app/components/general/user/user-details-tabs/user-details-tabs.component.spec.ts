@@ -5,6 +5,7 @@ import {User} from '../../../../models/User';
 import {UserAddressTableComponent} from '../user-address-table/user-address-table.component';
 import {AgmCoreModule} from '@agm/core';
 import {GeoLocationComponent} from '../../map/geo-location/geo-location.component';
+import {UserCompanyComponent} from '../user-company/user-company.component';
 
 describe('UserDetailsTabsComponent', () => {
   let component: UserDetailsTabsComponent;
@@ -21,7 +22,8 @@ describe('UserDetailsTabsComponent', () => {
       declarations: [
           UserDetailsTabsComponent,
           UserAddressTableComponent,
-          GeoLocationComponent
+          GeoLocationComponent,
+          UserCompanyComponent
       ]
     })
     .compileComponents();

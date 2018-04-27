@@ -17,8 +17,6 @@ export class GeoLocationComponent implements OnInit {
     lat: number = null;
     lng: number = null;
 
-    constructor() {}
-
     ngOnInit() {
         this.lat = parseInt(this.geoLocation.lat, 10);
         this.lng = parseInt(this.geoLocation.lng, 10);

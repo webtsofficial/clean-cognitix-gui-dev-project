@@ -10,6 +10,7 @@ import {UserDetailsTabsComponent} from '../user-details-tabs/user-details-tabs.c
 import {UserAddressTableComponent} from '../user-address-table/user-address-table.component';
 import {GeoLocationComponent} from '../../map/geo-location/geo-location.component';
 import {AgmCoreModule} from '@agm/core';
+import {UserCompanyComponent} from '../user-company/user-company.component';
 
 describe('UserCardComponent', () => {
     let component: UserCardComponent;
@@ -27,7 +28,8 @@ describe('UserCardComponent', () => {
                 UserCardComponent,
                 UserDetailsTabsComponent,
                 UserAddressTableComponent,
-                GeoLocationComponent
+                GeoLocationComponent,
+                UserCompanyComponent
             ]
         })
             .compileComponents();

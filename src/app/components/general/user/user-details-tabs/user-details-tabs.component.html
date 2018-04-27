@@ -37,7 +37,7 @@
       <app-geo-location [geoLocation]="user.address.geo"></app-geo-location>
     </div>
     <div *ngIf="activeTab === 'company'">
-      {{user.company}}
+      <app-user-company [userCompany]="user.company"></app-user-company>
     </div>
   </div>
 </section>
