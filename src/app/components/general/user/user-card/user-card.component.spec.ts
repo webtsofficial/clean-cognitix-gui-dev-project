@@ -11,6 +11,8 @@ import {UserAddressTableComponent} from '../user-address-table/user-address-tabl
 import {GeoLocationComponent} from '../../map/geo-location/geo-location.component';
 import {AgmCoreModule} from '@agm/core';
 import {UserCompanyComponent} from '../user-company/user-company.component';
+import {AlbumButtonComponent} from '../../buttons/album-button/album-button.component';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('UserCardComponent', () => {
     let component: UserCardComponent;
@@ -22,14 +24,16 @@ describe('UserCardComponent', () => {
             imports: [
                 AgmCoreModule.forRoot({
                     apiKey: 'AIzaSyD7C7TiBDUEczB86xK7XxBbACDTzVxXhLs'
-                })
+                }),
+                RouterTestingModule
             ],
             declarations: [
                 UserCardComponent,
                 UserDetailsTabsComponent,
                 UserAddressTableComponent,
                 GeoLocationComponent,
-                UserCompanyComponent
+                UserCompanyComponent,
+                AlbumButtonComponent
             ]
         })
             .compileComponents();

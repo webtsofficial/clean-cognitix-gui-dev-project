@@ -24,6 +24,7 @@ import { SearchInputComponent } from './components/general/form/search-input/sea
 
 // Pipes
 import { FilterUserByNamePipe } from './pipes/user/filter-user-by-name/filter-user-by-name.pipe';
+import { AlbumButtonComponent } from './components/general/buttons/album-button/album-button.component';
 // Global Const
 export const APIURL = 'https://jsonplaceholder.typicode.com';
 
@@ -39,7 +40,8 @@ export const APIURL = 'https://jsonplaceholder.typicode.com';
         UserCompanyComponent,
         SearchInputComponent,
         // Pipes
-        FilterUserByNamePipe
+        FilterUserByNamePipe,
+        AlbumButtonComponent
         // General
     ],
     imports: [

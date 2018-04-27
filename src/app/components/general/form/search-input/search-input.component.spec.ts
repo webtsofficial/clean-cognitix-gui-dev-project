@@ -30,7 +30,7 @@ describe('SearchInputComponent', () => {
     });
 
     it('changeSearchinput(string) emit Event in @Output() searchTerm', () => {
-        let searchTermEventEmitter = component.searchTerm,
+        const searchTermEventEmitter = component.searchTerm,
             searchTerm = 'search after this term';
         searchTermEventEmitter.subscribe(searchterm => {
             expect(searchterm).toBe(searchTerm);

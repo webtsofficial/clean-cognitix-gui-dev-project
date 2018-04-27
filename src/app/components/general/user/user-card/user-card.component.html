@@ -10,5 +10,8 @@
     </div>
     <div class="user-content" [ngClass]="{'active' : userActive}">
         <app-user-details-tabs *ngIf="userActive" [user]="user"></app-user-details-tabs>
+        <div class="user-buttons clearfix">
+            <app-album-button [userId]="user.id"></app-album-button>
+        </div>
     </div>
 </section>

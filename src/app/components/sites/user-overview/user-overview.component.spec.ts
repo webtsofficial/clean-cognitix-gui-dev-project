@@ -16,6 +16,8 @@ import {UserCompanyComponent} from '../../general/user/user-company/user-company
 import {SearchInputComponent} from '../../general/form/search-input/search-input.component';
 import {FilterUserByNamePipe} from '../../../pipes/user/filter-user-by-name/filter-user-by-name.pipe';
 import {FormsModule} from '@angular/forms';
+import {AlbumButtonComponent} from '../../general/buttons/album-button/album-button.component';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('UserOverviewComponent', () => {
     let component: UserOverviewComponent;
@@ -28,7 +30,8 @@ describe('UserOverviewComponent', () => {
                 AgmCoreModule.forRoot({
                     apiKey: 'AIzaSyD7C7TiBDUEczB86xK7XxBbACDTzVxXhLs'
                 }),
-                FormsModule
+                FormsModule,
+                RouterTestingModule
             ],
             declarations: [
                 UserOverviewComponent,
@@ -38,6 +41,7 @@ describe('UserOverviewComponent', () => {
                 GeoLocationComponent,
                 UserCompanyComponent,
                 SearchInputComponent,
+                AlbumButtonComponent,
                 FilterUserByNamePipe
             ],
             providers: [UsersService]
@@ -55,7 +59,7 @@ describe('UserOverviewComponent', () => {
         expect(component).toBeTruthy();
     });
     it('changeSearchName(string) to filter user', () => {
-        let searchTerm = 'search after this term';
+        const searchTerm = 'search after this term';
         component.changeSearchName(searchTerm);
         expect(component.userSearchName).toBe(searchTerm);
     });
