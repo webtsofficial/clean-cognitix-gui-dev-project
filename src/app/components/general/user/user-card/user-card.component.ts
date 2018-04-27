@@ -1,9 +1,7 @@
 import {
     Component,
-    EventEmitter,
     Input,
-    OnInit,
-    Output
+    OnInit
 } from '@angular/core';
 import {User} from '../../../../models/User';
 
@@ -16,7 +14,7 @@ import {User} from '../../../../models/User';
 export class UserCardComponent implements OnInit {
 
     @Input() user: User;
-    @Output() activeUser: EventEmitter<User> = new EventEmitter<User>();
+    userActive = false;
 
     constructor() {
     }
@@ -24,8 +22,8 @@ export class UserCardComponent implements OnInit {
     ngOnInit() {
     }
 
-    changeActiveUser(user: User): void {
-        this.activeUser.emit(user);
+    toggleUserActive(): void {
+        this.userActive = !this.userActive;
     }
 
 }

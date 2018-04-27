@@ -1,3 +1,16 @@
-<p>
-  user-card works!
-</p>
+<section class="user-card">
+    <div class="user-label clearfix" (click)="toggleUserActive()" [ngClass]="{'active' : userActive}">
+        <div class="label-text">
+            <i class="fas fa-user-circle"></i> {{user.name}}
+        </div>
+        <div class="label-chevron">
+            <i class="fas fa-caret-down" *ngIf="userActive"></i>
+            <i class="fas fa-caret-up" *ngIf="!userActive"></i>
+        </div>
+    </div>
+    <div class="user-content" [ngClass]="{'active' : userActive}">
+        <span *ngIf="userActive">
+            ABC
+        </span>
+    </div>
+</section>

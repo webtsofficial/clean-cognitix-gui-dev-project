@@ -7,6 +7,7 @@ import {
 import {UserOverviewComponent} from './user-overview.component';
 import {UsersService} from '../../../services/users/users.service';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {UserCardComponent} from '../../general/user/user-card/user-card.component';
 
 describe('UserOverviewComponent', () => {
     let component: UserOverviewComponent;
@@ -15,7 +16,7 @@ describe('UserOverviewComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
-            declarations: [UserOverviewComponent],
+            declarations: [UserOverviewComponent, UserCardComponent],
             providers: [UsersService]
         })
             .compileComponents();

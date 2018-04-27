@@ -1,2 +1,50 @@
 @import "../../../../../styles/variables";
 @import "../../../../../styles/mixins";
+
+.user-card {
+  margin: 2rem 1rem;
+  overflow: hidden;
+
+  .user-label {
+    cursor: pointer;
+    display: block;
+    padding: 1.5rem 2.5rem;
+    border-radius: 4rem;
+    background-color: $color-blue-light;
+    font-family: $font-roboto-slab;
+    font-size: 1.8rem;
+    color: $color-white;
+    white-space: nowrap;
+    @include transition(border-radius 0.3s ease-in-out);
+
+    &.active {
+      border-radius: 4rem 4rem 0 0;
+    }
+
+    .label-text {
+      display: block;
+      float: left;
+      width: 90%;
+    }
+    .label-chevron {
+      display: block;
+      float: right;
+      width: 10%;
+      text-align: right;
+    }
+  }
+  .user-content {
+    border-right: $color-blue-light 6px solid;
+    border-left: $color-blue-light 6px solid;
+    border-bottom: $color-blue-light 6px solid;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.6rem;
+    @include transition(opacity 0.3s ease-in-out);
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
