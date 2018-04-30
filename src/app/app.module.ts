@@ -28,6 +28,7 @@ import { AlbumButtonComponent } from './components/general/buttons/album-button/
 import { PhotosButtonComponent } from './components/general/buttons/photos-button/photos-button.component';
 import { UserAlbumsComponent } from './components/sites/user-albums/user-albums.component';
 import { UserPhotosComponent } from './components/sites/user-photos/user-photos.component';
+import { AlbumCardComponent } from './components/general/albums/album-card/album-card.component';
 // Global Const
 export const APIURL = 'https://jsonplaceholder.typicode.com';
 
@@ -47,7 +48,8 @@ export const APIURL = 'https://jsonplaceholder.typicode.com';
         AlbumButtonComponent,
         PhotosButtonComponent,
         UserAlbumsComponent,
-        UserPhotosComponent
+        UserPhotosComponent,
+        AlbumCardComponent
         // General
     ],
     imports: [
