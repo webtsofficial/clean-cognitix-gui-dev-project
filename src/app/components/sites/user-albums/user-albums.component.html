@@ -1,0 +1,20 @@
+<section class="container-fluid">
+    <!-- Headline -->
+    <div class="row">
+        <h1>
+            <i class="fas fa-images"></i> Albums
+        </h1>
+    </div>
+    <!-- searchField -->
+    <div class="row">
+
+    </div>
+    <!-- Albums -->
+    <div class="row" *ngIf="albums$ | async as albums">
+
+    </div>
+    <!-- Album Photos -->
+    <div class="row" *ngIf="photos$ | async as photos">
+        ^
+    </div>
+</section>

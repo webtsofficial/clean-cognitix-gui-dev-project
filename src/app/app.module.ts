@@ -26,6 +26,8 @@ import { SearchInputComponent } from './components/general/form/search-input/sea
 import { FilterUserByNamePipe } from './pipes/user/filter-user-by-name/filter-user-by-name.pipe';
 import { AlbumButtonComponent } from './components/general/buttons/album-button/album-button.component';
 import { PhotosButtonComponent } from './components/general/buttons/photos-button/photos-button.component';
+import { UserAlbumsComponent } from './components/sites/user-albums/user-albums.component';
+import { UserPhotosComponent } from './components/sites/user-photos/user-photos.component';
 // Global Const
 export const APIURL = 'https://jsonplaceholder.typicode.com';
 
@@ -43,7 +45,9 @@ export const APIURL = 'https://jsonplaceholder.typicode.com';
         // Pipes
         FilterUserByNamePipe,
         AlbumButtonComponent,
-        PhotosButtonComponent
+        PhotosButtonComponent,
+        UserAlbumsComponent,
+        UserPhotosComponent
         // General
     ],
     imports: [

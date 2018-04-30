@@ -19,10 +19,14 @@ import {FormsModule} from '@angular/forms';
 import {AlbumButtonComponent} from '../../general/buttons/album-button/album-button.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {PhotosButtonComponent} from '../../general/buttons/photos-button/photos-button.component';
+import {ActivatedRoute} from '@angular/router';
 
 describe('UserOverviewComponent', () => {
     let component: UserOverviewComponent;
     let fixture: ComponentFixture<UserOverviewComponent>;
+    const fakeActivatedRoute = {
+        snapshot: { data: {} }
+    } as ActivatedRoute;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -46,7 +50,13 @@ describe('UserOverviewComponent', () => {
                 PhotosButtonComponent,
                 FilterUserByNamePipe
             ],
-            providers: [UsersService]
+            providers: [
+                UsersService,
+                {
+                    provide: ActivatedRoute,
+                    useValue: fakeActivatedRoute
+                }
+            ]
         })
             .compileComponents();
     }));
