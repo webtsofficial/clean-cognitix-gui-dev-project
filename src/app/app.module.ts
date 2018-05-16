@@ -60,7 +60,7 @@ export const APIURL = 'https://jsonplaceholder.typicode.com';
         HttpClientModule,
         LazyLoadImageModule,
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyD7C7TiBDUEczB86xK7XxBbACDTzVxXhLs'
+            apiKey: '***'
         })
     ],
     providers: [
